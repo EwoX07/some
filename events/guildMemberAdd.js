@@ -94,10 +94,10 @@ module.exports = async (client, member) => {
       "welcome-image.png"
     );
 
-    channel.send(`${wmsg}`, attachment).catch(console.error);
+    client.channels.cache.get(channel).send(`${wmsg}`, attachment).catch(console.error);
   }
   // Welcome Embed gangsebelahspecial
-  if (settings.welcomeEmbed !== "true") return;
+  /*if (settings.welcomeEmbed !== "true") return;
 
   const wembc = member.guild.channels.cache.find(
     wc => wc.name === settings.welcomeEmbedCh
@@ -126,5 +126,5 @@ module.exports = async (client, member) => {
       .setFooter(`Member Saat ini : ${member.guild.memberCount}`)
       .setTimestamp();
     wembc.send(`Welcome ${member}`, wembed).catch(console.error);
-  }
+  }*/
 };
