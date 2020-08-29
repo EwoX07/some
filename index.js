@@ -4,11 +4,15 @@ const { promisify } = require("util");
 const readdir = promisify(require("fs").readdir);
 const Enmap = require("enmap");
 const DisTube = require("distube");
+ 
 //const { ReactionRoleManager } = require("discord.js-collector");
 
 const client = new Discord.Client({
   disableMentions: "everyone"
 });
+
+const TempChannels = require("discord-temp-channels");
+const tempChannels = new TempChannels(client);
 
 const logs = require("discord-logs");
 logs(client);

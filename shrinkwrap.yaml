@@ -6,6 +6,7 @@ dependencies:
   canvas: 2.6.1
   chalk: 4.1.0
   discord-logs: 1.7.7
+  discord-temp-channels: 1.0.3
   discord.js: 12.3.1
   discord.js-collector: 1.4.2
   distube: 2.6.0
@@ -16,6 +17,7 @@ dependencies:
   moment: 2.27.0
   ms: 2.1.2
   os: 0.1.1
+  quick.db: 7.1.1
   tinyurl: 1.1.7
   utf-8-validate: 5.0.2
   util: 0.12.3
@@ -169,6 +171,16 @@ packages:
     dev: false
     resolution:
       integrity: sha512-mLQ4i2QO1ytvGWFWmcngKO//JXAQueZvwEKtjgQFM4jIK0kU+ytMfplL8j+n5mspOfjHwoAg+9yhb7BwAHm36g==
+  /better-sqlite3/6.0.1:
+    dependencies:
+      bindings: 1.5.0
+      integer: 3.0.1
+      prebuild-install: 5.3.5
+      tar: 4.4.10
+    dev: false
+    requiresBuild: true
+    resolution:
+      integrity: sha512-4aV1zEknM9g1a6B0mVBx1oIlmYioEJ8gSS3J6EpN1b1bKYEE+N5lmpmXHKNKTi0qjHziSd7XrXwHl1kpqvEcHQ==
   /better-sqlite3/7.1.0:
     dependencies:
       bindings: 1.5.0
@@ -358,6 +370,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Wq6moU76kwZZR5Acr51w3dliOujok8PMyDQb642RCh0XCjfqW6ZvwYf4smt/0Kjd00ZeTCK0PUBi0EYcC5Dkgw==
+  /discord-temp-channels/1.0.3:
+    dependencies:
+      discord.js: 12.3.1
+    dev: false
+    resolution:
+      integrity: sha512-+WlxAVFCdFSAJwy62Uk4rEtCu/EkMQsH9ra47yqV4+DtauNiwoIsDUHliFS89qUcDEO+iOmPBdAhTpM56rhGRQ==
   /discord-ytdl-core/4.0.8:
     dependencies:
       prism-media: 1.2.2
@@ -618,6 +636,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-RZY5huIKCMRWDUqZlEi72f/lmXKMvuszcMBduliQ3nnWbx9X/ZBQO7DijMEYS9EhHBb2qacRUMtC7svLwe0lcw==
+  /integer/3.0.1:
+    dependencies:
+      bindings: 1.5.0
+      prebuild-install: 5.3.5
+    dev: false
+    requiresBuild: true
+    resolution:
+      integrity: sha512-OqtER6W2GIJTIcnT5o2B/pWGgvurnVOYs4OZCgay40QEIbMTnNq4R0KSaIw1TZyFtPWjm5aNM+pBBMTfc3exmw==
   /is-arguments/1.0.4:
     dev: false
     engines:
@@ -687,6 +713,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-u5NdSFgsuhaMBoNJV6VKPgcSTxE=
+  /lodash/4.17.15:
+    dev: false
+    resolution:
+      integrity: sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
   /lodash/4.17.20:
     dev: false
     resolution:
@@ -1020,6 +1050,13 @@ packages:
     dev: false
     resolution:
       integrity: sha512-LwZy+p3SFs1Pytd/jYct4wpv49HiYCqd9Rlc5ZVdk0V+8Yzv6jR5Blk3TRmPL1ft69TxP0IMZGJ+WPFU2BFhww==
+  /quick.db/7.1.1:
+    dependencies:
+      better-sqlite3: 6.0.1
+      lodash: 4.17.15
+    dev: false
+    resolution:
+      integrity: sha512-PziF96cxYNvHcgkZkEbZ3UzhR2bXcLff96n68J1DhE/2Q2ELeGnd/Z4jtqJqZz5rfiqXvzEbCznXV8wNsOTSww==
   /rc/1.2.8:
     dependencies:
       deep-extend: 0.6.0
@@ -1384,6 +1421,7 @@ specifiers:
   canvas: ^2.6.1
   chalk: ^4.1.0
   discord-logs: ^1.7.7
+  discord-temp-channels: ^1.0.3
   discord.js: ^12.3.1
   discord.js-collector: ^1.4.2
   distube: ^2.6.0
@@ -1394,6 +1432,7 @@ specifiers:
   moment: ^2.27.0
   ms: ^2.1.2
   os: ^0.1.1
+  quick.db: ^7.1.1
   tinyurl: ^1.1.7
   utf-8-validate: ^5.0.2
   util: ^0.12.3
