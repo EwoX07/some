@@ -19,13 +19,13 @@ exports.run = async (client, message, args) => {
 exports.conf = {
   enabled: true,
   guildOnly: true,
-  aliases: [],
+  aliases: ["vl"],
   permLevel: "User"
 };
 
 exports.help = {
   name: "vclimit",
   category: "Utils",
-  description: "Create a main temp voice channel",
-  usage: "vclimit <number>"
+  description: "Limit your voice channel",
+  usage: "vclimit `<number>`"
 };
