@@ -8,7 +8,7 @@ exports.run = async (client, message, args) => {
             childAutoDelete: true,
             childAutoDeleteIfOwnerLeaves: false,
             childBitrate: 8000,
-            childFormat: (member, count) => `#${count} | ${member.user.username}`
+            childFormat: (member) => `${member.user.username}`
         };
         tempChannels.registerChannel(message.member.voice.channel.id, options);
         db.push("temp-channels", {
