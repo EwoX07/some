@@ -9,8 +9,7 @@ module.exports = async (client, message) => {
     "welcome",
     "<@300944075983421451>",
     "<@622047554359656473>",
-    "<@720224674457452594>",
-    "<@508092111858434110>"
+    "<@720224674457452594>"
   ];
 
   if (trg === ar[0]) {
@@ -36,11 +35,6 @@ module.exports = async (client, message) => {
   } else if (trg === ar[4]) {
     if (message.guild.id !== gid) return;
     message.reply("Iya sayang kenapa?");
-  } else if (trg === ar[5]) {
-    if (message.guild.id !== gid) return;
-    message.reply(
-      "Ada apa tag - tag? Kalau kangen DM aja.... <a:ciatciat:725117108832436274>"
-    );
   }
 
   const settings = (message.settings = client.getSettings(message.guild));
