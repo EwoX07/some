@@ -14,7 +14,7 @@ module.exports = async (client, oldState, newState) => {
             await master.clone({ name: newState.member.user.username })
               .then(async channel => {
                   clone.push({ cID: channel.id, gID: channel.guild.id, mID: newState.member.user.id });
-                  await newState.setVoiceChannel(channel.id);
+                  await newState.setChannel(channel.id);
               })
         }
 
