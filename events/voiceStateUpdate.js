@@ -1,7 +1,7 @@
 module.exports = async (client, oldState, newState) => {
 
     const guild = "736362962566250508";
-    const channel = "754148912922624021";
+    const channel = "684099271972225076";
 
     const master = await client.guilds.cache.get(guild).channels.cache.get(channel);
     if (!master) return;
