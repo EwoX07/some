@@ -6,11 +6,13 @@ module.exports = async (client, oldState, newState) => {
     const master = await client.guilds.cache.get(guild).channels.cache.get(channel);
     if (!master) return;
 
+    const target = newState.member;
+
     if (oldState.channel !== newState.channel) {
 
         if (newState.channelID === master.id) {
-            const clone = await master.clone({ name: newState.user.username });
-            return newState.member.setChannel(clone);
+            const clone = await master.clone({ name: target.user.username });
+            return target.setChannel(clone);
         }
 
     }
