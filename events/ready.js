@@ -13,8 +13,8 @@ module.exports = client => {
     client.user.setActivity(`${actvs[index]}`);
   }, 30000);
   
-  db.get("temp-channels").forEach((channelData) => {
+/*  db.get("temp-channels").forEach((channelData) => {
         client.tempChannels.registerChannel(channelData.channelID, channelData.options);
-    });
+    });*/
   
 };

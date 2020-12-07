@@ -1,16 +1,14 @@
-const exConfig = require("./config.json");
-
 const config = {
-  ownerID: exConfig.ownerID,
+  ownerID: "339612673811415041",
 
   admins: [],
 
   support: [],
 
-  token: exConfig.TOKEN,
+  token: "NzMyODI4NTk4NDM1NzA4OTc0.Xw6R0Q.SSCaKRf0UEmqGVpGvDymfj2Dr5E",
 
   defaultSettings: {
-    prefix: exConfig.prefix,
+    prefix: ">>",
     modLogChannel: "mod-log",
     modRole: "Moderator",
     adminRole: "Administrator",
