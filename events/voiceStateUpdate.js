@@ -9,13 +9,12 @@ module.exports = async (client, oldState, newState) => {
     if (oldState.channel !== newState.channel) {
 
         if (newState.channelID === master.id) {
-
             const clone = await master.clone({ name: newState.member.user.username }).catch(() => {});
-            newState.setChannel(clone).catch(() => {});
+            await newState.setChannel(clone).catch(() => {});
 
-            if (clone.members.filter(m => !m.user.bot).size < 1) {
-                return clone.delete();
-            }
+        }
+        if (clone.members.filter(m => !m.user.bot).size < 1) {
+            await clone.delete();
 
         }
 
