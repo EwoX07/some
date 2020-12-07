@@ -19,9 +19,9 @@ module.exports = async (client, oldState, newState) => {
         }
 
         if (clone.length >= 0) for(let i = 0; i < clone.length; i++) {
-            let ch = await client.guilds.cache.get(guild).channels.cache.find(x => x.id === clone[i].cID);
+            let ch = await client.guilds.cache.find(x => x.id === clone[i].gID).channels.cache.find(x => x.id === clone[i].cID);
             if(ch.members.filter(m => !m.user.bot).size < 1) {
-               await ch.delete();
+               await ch.delete().catch((e) => message.channel.send(`{e}`));
                return clone.splice(i, 1);
             }
         }
