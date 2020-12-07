@@ -8,7 +8,9 @@ module.exports = async (client, oldState, newState) => {
 
     if (oldState.channel !== newState.channel) {
 
-        if (newState.channelID === master.id) console.log("join");
+        if (newState.channelID === master.id) {
+            const clone = await master.clone({ name: newState.user.username });
+            return newState.member.setChannel(clone);
     }
 
 };
