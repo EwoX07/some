@@ -1,5 +1,11 @@
 module.exports = async (oldState, newState) => {
 
-    if (oldState !== newState) console.log();
+    const guild = "736362962566250508";
+    const channel = "754148912922624021";
+
+    if (oldState !== newState) {
+
+        if (newState.channelID === channel) console.log("join");
+    }
 
 }
