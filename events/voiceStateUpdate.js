@@ -19,10 +19,10 @@ module.exports = async (client, oldState, newState) => {
         }
 
         if (clone.length >= 0) for(let i = 0; i < clone.length; i++) {
-            let ch = clone[i].guild.channels.find(x => x.id == clone[i].cID);
+            let ch = client.guild.channels.cache.find(x => x.id === clone[i].cID);
             if(ch.members.filter(m => !m.user.bot).size < 1) {
-               await ch.delete()
-               return clone.splice(i, 1)
+               await ch.delete();
+               return clone.splice(i, 1);
             }
         }
     }
