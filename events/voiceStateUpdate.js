@@ -6,17 +6,17 @@ module.exports = async (client, oldState, newState) => {
     const master = await client.guilds.cache.get(guild).channels.cache.get(channel);
     if (!master) return;
 
-    let clone;
-
     if (oldState.channel !== newState.channel) {
 
         if (newState.channelID === master.id) {
-            clone = await master.clone({ name: newState.member.user.username }).catch(() => {});
+            const clone = await master.clone({ name: newState.member.user.username }).catch(() => {});
             await newState.setChannel(clone).catch(() => {});
-        }
-        const toDel = await clone.members;
-        if (toDel.filter(m => !m.user.bot).size < 1) {
-            await clone.delete();
+
+            if (oldState.channelID === clone.id) {
+                const toDel = oldState.channel;
+                const user = await toDel.members.filter(m => !m.user.bot);
+                if (user.size < 1) await toDel.delete().catch(() => {});
+            }
         }
     }
 };
