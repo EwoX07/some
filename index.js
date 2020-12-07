@@ -9,10 +9,10 @@ const client = new Discord.Client({
   disableMentions: "everyone"
 });
 
-/*const TempChannels = require("discord-temp-channels");
+const TempChannels = require("./index.ts");
 const tempChannels = new TempChannels(client);
 
-const logs = require("discord-logs");
+/*const logs = require("discord-logs");
 logs(client);*/
 
 client.config = require("./config.js");
