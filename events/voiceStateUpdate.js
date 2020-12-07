@@ -15,7 +15,7 @@ module.exports = async (client, oldState, newState) => {
             await newState.setChannel(clone).catch(() => {});
         }
         if (clone.members.filter(m => !m.user.bot).size < 1) {
-            return clone.delete();
+            await clone.delete();
         }
     }
 };
