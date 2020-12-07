@@ -6,15 +6,23 @@ module.exports = async (client, oldState, newState) => {
     const master = await client.guilds.cache.get(guild).channels.cache.get(channel);
     if (!master) return;
 
+    let clone = [];
+
     if (oldState.channel !== newState.channel) {
 
         if (newState.channelID === master.id) {
-            const clone = await master.clone({ name: newState.member.user.username }).catch(() => {});
-            await newState.setChannel(clone).catch(() => {});
+            await master.clone({ name: newState.member.user.username })
+              .then(async channel => {
+                  clone.push({ cID: channel.id, gID: channel.guild.id, mID: newState.member.user.id });
+                  await newState.setVoiceChannel(channel.id);
+              })
+        }
 
-            if (clone) {
-                const user = await clone.members.filter(m => !m.user.bot);
-                if (user.size < 1) await clone.delete().catch(() => {});
+        if (clone.length >= 0) for(let i = 0; i < clone.length; i++) {
+            let ch = clone[i].guild.channels.find(x => x.id == clone[i].cID);
+            if(ch.members.filter(m => !m.user.bot).size < 1) {
+               await ch.delete()
+               return clone.splice(i, 1)
             }
         }
     }
