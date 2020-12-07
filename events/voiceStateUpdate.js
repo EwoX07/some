@@ -11,6 +11,8 @@ module.exports = async (client, oldState, newState) => {
         if (newState.channelID === master.id) {
             const clone = await master.clone({ name: newState.user.username });
             return newState.member.setChannel(clone);
+        }
+
     }
 
 };
