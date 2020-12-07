@@ -5,7 +5,7 @@ const config = {
 
   support: [],
 
-  token: "NzMyODI4NTk4NDM1NzA4OTc0.Xw6R0Q.SSCaKRf0UEmqGVpGvDymfj2Dr5E",
+  token: "",
 
   defaultSettings: {
     prefix: ">>",
