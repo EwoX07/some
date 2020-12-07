@@ -6,7 +6,7 @@ module.exports = async (client, oldState, newState) => {
     const master = await client.guilds.cache.get(guild).channels.cache.get(channel);
     if (!master) return;
 
-    let clone;
+    let clone = [];
 
     if (oldState.channel !== newState.channel) {
 
@@ -16,7 +16,7 @@ module.exports = async (client, oldState, newState) => {
                   clone.push({ cID: channel.id, gID: channel.guild.id, mID: newState.member.user.id });
                   await newState.setChannel(channel.id);
               })
-        } console.log(clone);
+        } console.log(clone[0]);
 
         if (clone.length > 0) {
             for(let i = 0; i < clone.length; i++) {
